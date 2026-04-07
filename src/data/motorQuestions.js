@@ -1,0 +1,100 @@
+export const motorQuestions = [
+  {
+    id: 'vehicle_type',
+    question: 'What do you ride? 🏎️',
+    subtitle: "Whether it's 2 wheels or 4, let's get it covered!",
+    type: 'single',
+    options: [
+      { value: 'car', label: 'Car', icon: '🚗', description: 'Four-wheel squad', points: 10 },
+      { value: 'bike', label: 'Bike', icon: '🏍️', description: 'Two-wheel thrill', points: 10 },
+      { value: 'scooter', label: 'Scooter', icon: '🛵', description: 'City cruiser', points: 10 },
+    ],
+    rewards: {
+      car: { text: 'Nice ride! Let\'s keep it protected 🚗', points: 10 },
+      bike: { text: 'Freedom on two wheels! Let\'s shield it 🏍️', points: 10 },
+      scooter: { text: 'Smart city travel! Coverage incoming 🛵', points: 10 },
+    },
+  },
+  {
+    id: 'vehicle_age',
+    question: 'How fresh is your ride? ✨',
+    subtitle: 'Newer vehicles = better rates. How old is yours?',
+    type: 'single',
+    options: [
+      { value: 'new', label: 'Brand spankin\' new', icon: '✨', description: 'Showroom fresh', points: 15 },
+      { value: '1-3', label: '1–3 years', icon: '👌', description: 'Still young', points: 12 },
+      { value: '3-5', label: '3–5 years', icon: '🔧', description: 'Trusty companion', points: 10 },
+      { value: '5+', label: '5+ years', icon: '🏆', description: 'Veteran rider', points: 8 },
+    ],
+    rewards: {
+      new: { text: 'Protect that new-car smell! ✨', points: 15 },
+      '1-3': { text: 'Still in great shape — let\'s keep it that way 👌', points: 12 },
+      '3-5': { text: 'A reliable ride deserves reliable coverage 🔧', points: 10 },
+      '5+': { text: 'Loyalty pays! Your veteran deserves protection 🏆', points: 8 },
+    },
+    inlineInsight: 'New vehicles lose 15-20% value in the first year — insurance covers that gap',
+  },
+  {
+    id: 'usage',
+    question: 'How often do you hit the road? 🛣️',
+    subtitle: 'Your driving habits help us find the right plan',
+    type: 'single',
+    options: [
+      { value: 'daily', label: 'Every single day', icon: '🌆', description: 'Daily warrior', points: 8 },
+      { value: 'occasional', label: 'Few times a week', icon: '🌤️', description: 'Balanced rider', points: 10 },
+      { value: 'weekend', label: 'Weekends only', icon: '🌅', description: 'Weekend explorer', points: 12 },
+      { value: 'commercial', label: 'For business', icon: '📦', description: 'Money maker', points: 8 },
+    ],
+    rewards: {
+      daily: { text: 'Road warrior! Extra coverage is a must for you 🌆', points: 8 },
+      occasional: { text: 'Nice balance! Lower risk = better rates 🌤️', points: 10 },
+      weekend: { text: 'Weekend vibes! You\'re a lower-risk driver 🎉', points: 12 },
+      commercial: { text: 'Hustler mode! Let\'s get proper business coverage 💼', points: 8 },
+    },
+    insight: {
+      daily: '💡 Daily commuters face 30% higher accident risk — coverage is crucial',
+      commercial: '💡 Business vehicles need special coverage — standard plans may not apply',
+    },
+  },
+  {
+    id: 'existing_insurance',
+    question: "What's your current coverage status? 📋",
+    subtitle: "Let's see where you stand — no judgment!",
+    type: 'single',
+    options: [
+      { value: 'comprehensive', label: 'Full comprehensive', icon: '🛡️', description: 'Well protected!', points: 15 },
+      { value: 'third_party', label: 'Third party only', icon: '📄', description: 'Basic legal cover', points: 8 },
+      { value: 'expired', label: 'Oops, it expired', icon: '⏰', description: 'Happens to the best', points: 5 },
+      { value: 'none', label: 'Don\'t have any', icon: '😬', description: 'Let\'s fix that!', points: 5 },
+    ],
+    rewards: {
+      comprehensive: { text: 'You\'re already a protection pro! 🛡️', points: 15 },
+      third_party: { text: 'Good start, but your vehicle isn\'t covered yet ⚡', points: 8 },
+      expired: { text: 'No judgment! Let\'s get you back on track ⏰', points: 5 },
+      none: { text: 'Brave but risky! We can fix this in minutes 😬', points: 5 },
+    },
+    insight: {
+      expired: '⚠️ Driving uninsured = up to ₹2,000 fine + vehicle seizure',
+      none: '⚠️ Third-party insurance is mandatory by law in India!',
+      third_party: '💡 Third party only covers others — YOUR vehicle damage is on you',
+    },
+  },
+  {
+    id: 'priority',
+    question: 'What matters most for your ride? 🎯',
+    subtitle: 'Pick your top priority — we\'ll optimize around it',
+    type: 'single',
+    options: [
+      { value: 'low_premium', label: 'Save money', icon: '💰', description: 'Budget-friendly', points: 8 },
+      { value: 'max_coverage', label: 'Maximum cover', icon: '🛡️', description: 'Full protection', points: 15 },
+      { value: 'roadside', label: '24/7 rescue', icon: '🚨', description: 'Never stranded', points: 12 },
+      { value: 'easy_claims', label: 'Easy claims', icon: '⚡', description: 'Zero hassle', points: 12 },
+    ],
+    rewards: {
+      low_premium: { text: 'Budget-smart! We\'ll find you the best deal 💰', points: 8 },
+      max_coverage: { text: 'Maximum protection mode activated! 🛡️', points: 15 },
+      roadside: { text: 'Peace of mind, 24/7! Great choice 🚨', points: 12 },
+      easy_claims: { text: 'Claims should be easy — we agree! ⚡', points: 12 },
+    },
+  },
+]
