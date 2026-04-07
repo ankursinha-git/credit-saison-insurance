@@ -1,5 +1,6 @@
 import { AnimatePresence, motion } from 'framer-motion'
 import { useApp } from './context/AppContext'
+import ThemeToggle from './components/ThemeToggle'
 import Landing from './components/Landing'
 import InsuranceSelector from './components/InsuranceSelector'
 import QuizFlow from './components/QuizFlow'
@@ -37,14 +38,17 @@ export default function App() {
   const { screen } = useApp()
 
   return (
-    <AnimatePresence mode="wait">
-      <motion.div
-        key={screen}
-        {...pageTransition}
-        style={{ flex: 1, display: 'flex', flexDirection: 'column' }}
-      >
-        {getScreen(screen)}
-      </motion.div>
-    </AnimatePresence>
+    <>
+      <ThemeToggle />
+      <AnimatePresence mode="wait">
+        <motion.div
+          key={screen}
+          {...pageTransition}
+          style={{ flex: 1, display: 'flex', flexDirection: 'column' }}
+        >
+          {getScreen(screen)}
+        </motion.div>
+      </AnimatePresence>
+    </>
   )
 }

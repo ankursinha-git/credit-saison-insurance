@@ -3,6 +3,7 @@
   display: flex;
   flex-direction: column;
   background: var(--bg);
+  transition: background 0.3s;
 }
 
 /* Header */
@@ -12,13 +13,14 @@
   top: 0;
   background: var(--bg);
   z-index: 10;
+  transition: background 0.3s;
 }
 
 .quiz-header-top {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 16px;
+  margin-bottom: 14px;
 }
 
 .quiz-back-btn {
@@ -26,13 +28,13 @@
   height: 40px;
   border-radius: var(--radius-full);
   background: var(--bg-card);
-  border: 1px solid var(--border);
+  border: 2px solid var(--border);
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 18px;
   color: var(--text-primary);
-  transition: background 0.2s;
+  transition: all 0.2s;
 }
 
 .quiz-back-btn:active {
@@ -42,25 +44,31 @@
 .quiz-step-label {
   font-size: 13px;
   color: var(--text-secondary);
-  font-weight: 600;
+  font-weight: 700;
 }
 
 .quiz-close-btn {
   width: 40px;
   height: 40px;
   border-radius: var(--radius-full);
-  background: transparent;
+  background: var(--bg-card);
+  border: 2px solid var(--border);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 18px;
+  font-size: 16px;
   color: var(--text-secondary);
+  transition: all 0.2s;
+}
+
+.quiz-close-btn:active {
+  background: var(--border-light);
 }
 
 /* Progress bar */
 .quiz-progress {
   height: 6px;
-  background: var(--border-light);
+  background: var(--border);
   border-radius: var(--radius-full);
   overflow: hidden;
 }
@@ -82,8 +90,8 @@
 
 .quiz-progress-text {
   font-size: 12px;
-  color: var(--text-muted);
-  font-weight: 500;
+  color: var(--text-secondary);
+  font-weight: 600;
 }
 
 .quiz-points-badge {
@@ -91,12 +99,12 @@
   align-items: center;
   gap: 4px;
   padding: 4px 12px;
-  background: linear-gradient(135deg, #FFF3E0, #FFF8E1);
-  border: 1px solid #FFE0B2;
+  background: var(--points-bg);
+  border: 1px solid var(--points-border);
   border-radius: var(--radius-full);
   font-size: 12px;
   font-weight: 700;
-  color: #E65100;
+  color: var(--points-color);
 }
 
 /* Reward toast */
@@ -108,7 +116,8 @@
   max-width: 420px;
   width: calc(100% - 40px);
   padding: 14px 18px;
-  background: linear-gradient(135deg, var(--primary), var(--primary-light));
+  background: linear-gradient(135deg, #1E293B, #334155);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow-xl);
   display: flex;
@@ -121,16 +130,16 @@
 .quiz-reward-text {
   font-size: 14px;
   font-weight: 600;
-  color: white;
+  color: #F1F5F9;
   flex: 1;
 }
 
 .quiz-reward-points {
   font-size: 14px;
   font-weight: 800;
-  color: var(--accent);
-  background: rgba(0, 201, 167, 0.15);
-  padding: 4px 10px;
+  color: #34D399;
+  background: rgba(52, 211, 153, 0.15);
+  padding: 4px 12px;
   border-radius: var(--radius-full);
   white-space: nowrap;
 }
@@ -155,7 +164,7 @@
   font-size: 14px;
   color: var(--text-secondary);
   margin-bottom: 24px;
-  line-height: 1.4;
+  line-height: 1.5;
 }
 
 /* Options */
@@ -178,6 +187,7 @@
   transition: all 0.2s ease;
   position: relative;
   overflow: hidden;
+  box-shadow: var(--shadow-sm);
 }
 
 .quiz-option:active {
@@ -185,9 +195,9 @@
 }
 
 .quiz-option.selected {
-  border-color: var(--secondary);
-  background: rgba(108, 99, 255, 0.04);
-  box-shadow: 0 0 0 1px var(--secondary);
+  border-color: var(--selected-border);
+  background: var(--selected-bg);
+  box-shadow: 0 0 0 1px var(--selected-border), var(--shadow-sm);
 }
 
 .quiz-option-icon {
@@ -204,7 +214,7 @@
 }
 
 .quiz-option.selected .quiz-option-icon {
-  background: rgba(108, 99, 255, 0.1);
+  background: var(--selected-bg);
 }
 
 .quiz-option-content {
@@ -241,8 +251,8 @@
 }
 
 .quiz-option.selected .quiz-option-points {
-  background: rgba(0, 201, 167, 0.1);
-  color: #00a88a;
+  background: rgba(52, 211, 153, 0.12);
+  color: var(--accent-dark);
 }
 
 .quiz-option-check {
@@ -267,7 +277,7 @@
 /* Insight box */
 .quiz-insight {
   padding: 14px 16px;
-  background: linear-gradient(135deg, rgba(108, 99, 255, 0.06), rgba(0, 201, 167, 0.06));
+  background: var(--insight-bg);
   border-radius: var(--radius-md);
   border-left: 3px solid var(--secondary);
   display: flex;
@@ -279,7 +289,7 @@
 .quiz-insight.inline {
   margin-top: 16px;
   border-left-color: var(--accent);
-  background: linear-gradient(135deg, rgba(0, 201, 167, 0.06), rgba(108, 99, 255, 0.04));
+  background: var(--insight-inline-bg);
 }
 
 .quiz-insight-icon {
@@ -301,6 +311,7 @@
   background: var(--bg);
   position: sticky;
   bottom: 0;
+  transition: background 0.3s;
 }
 
 .quiz-next-btn {
@@ -336,6 +347,7 @@
   flex-direction: column;
   padding: 20px;
   background: var(--bg);
+  transition: background 0.3s;
 }
 
 .selector-header {
@@ -350,12 +362,13 @@
   height: 40px;
   border-radius: var(--radius-full);
   background: var(--bg-card);
-  border: 1px solid var(--border);
+  border: 2px solid var(--border);
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 18px;
   color: var(--text-primary);
+  transition: all 0.2s;
 }
 
 .selector-title {
@@ -387,6 +400,7 @@
   transition: all 0.25s ease;
   position: relative;
   overflow: hidden;
+  box-shadow: var(--shadow-sm);
 }
 
 .selector-card:active {
@@ -401,7 +415,7 @@
   width: 80px;
   height: 80px;
   border-radius: 0 0 0 80px;
-  opacity: 0.06;
+  opacity: 0.08;
   pointer-events: none;
 }
 
@@ -428,13 +442,13 @@
   font-size: 18px;
   font-weight: 700;
   color: var(--text-primary);
-  margin-bottom: 4px;
+  margin-bottom: 6px;
 }
 
 .selector-card-desc {
   font-size: 13px;
   color: var(--text-secondary);
-  line-height: 1.4;
+  line-height: 1.5;
   margin-bottom: 14px;
 }
 
@@ -445,25 +459,25 @@
 }
 
 .selector-card-tag {
-  padding: 3px 10px;
+  padding: 4px 12px;
   border-radius: var(--radius-full);
   font-size: 11px;
-  font-weight: 600;
+  font-weight: 700;
 }
 
 .selector-card.health .selector-card-tag {
-  background: rgba(108, 99, 255, 0.08);
+  background: rgba(108, 99, 255, 0.1);
   color: var(--secondary);
 }
 
 .selector-card.life .selector-card-tag {
-  background: rgba(59, 130, 246, 0.08);
-  color: #3b82f6;
+  background: rgba(59, 130, 246, 0.1);
+  color: #60a5fa;
 }
 
 .selector-card.motor .selector-card-tag {
-  background: rgba(0, 201, 167, 0.08);
-  color: #00a88a;
+  background: rgba(0, 201, 167, 0.1);
+  color: var(--accent-dark);
 }
 
 .selector-card-arrow {
@@ -483,4 +497,5 @@
 .selector-footer-text {
   font-size: 13px;
   color: var(--text-muted);
+  font-weight: 500;
 }
